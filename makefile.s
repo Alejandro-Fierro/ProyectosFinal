@@ -1,8 +1,7 @@
-tipo6: tipo6.o
-  g++ -nostartfiles -o tipo6 tipo6.o
-  
-tipo6.o: tipo6.s
-  as -g -o tipo6.o tipo6.s
+condicion: condicion.o
+  ld -g -o condicion condicion.o
+condicion.o:condicion.s
+  as -g -o  condicion.o condicion.s
   
 clean:
-  rn tipo6 tipo6.o
+  rn condicion condicion.o
