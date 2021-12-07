@@ -1,12 +1,16 @@
+# include <stdio.h>
+
 //FIERRO VIVIAN LUIS ALEJANDRO
 //19211637
-//EJERCICIO 1 CAPITULO 2
-#include <stdio.h>
+//EJERCICIO SUMA DE VECTOR
 
-int main()
+void main (void)
 {
-for(int i=100;i>=0;i-2)
+int i , suma ;
+int vector [7]= {150 , 80 , 250 , -300, 123, -60, 51};
+for ( suma = i = 0; i <7; i ++ )
 {
-  printf(i+"\n");
+suma += vector [i];
 }
+printf (" La suma es %d \n" , suma );
 }
