@@ -1,7 +1,7 @@
 //FIERRO VIVIAN LUIS ALEJANDRO
 //19211637
 //EJERCICIO 1 CAPITULO 2
-
+include <stdio.h>
 
 int main()
 {
