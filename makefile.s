@@ -4,4 +4,4 @@ condicion.o:condicion.s
   as -g -o  condicion.o condicion.s
   
 clean:
-  rn condicion condicion.o
+  rm condicion condicion.o
