@@ -1,0 +1,8 @@
+//FIERRO VIVIAN LUIS ALEJANDRO
+//19211637
+//EJERCICIO 1 CAPITULO 2
+
+for(int i=100;i>=0;i-2)
+{
+  print(i+"\n");
+}
