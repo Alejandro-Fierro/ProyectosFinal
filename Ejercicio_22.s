@@ -4,7 +4,7 @@
 main:
   push{r4,lr}
   ldr r0,.L3
-  bl printf
+  bl print
   mov r0,#0
   pop {r4,pc}
 .L3:
