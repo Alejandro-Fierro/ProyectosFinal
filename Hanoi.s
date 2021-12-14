@@ -4,20 +4,17 @@
 @ CREDITOS A QUIEN CORRESPONDA
 
 
-@   hanoi2.s
+@   hanoi.s
 @   D. Thiebaut
 @   Recursive towers of Hanoi
-@   Prompts the user for the number of disks to 
-@   move.
+@   See https://en.wikipedia.org/wiki/Tower_of_Hanoi Wikipedia for details.
 
 @ ---------------------------------------
 @	Data Section
 @ ---------------------------------------
 	
 	.data
-	.balign 4
-prompt:	.asciz	"How many disk do you want to move? "
-format:	.asciz	"%d"	
+	.balign 4	
 string: .asciz  "move disk from %c to %c\n\0"
 peg1:	.int	'A'		@ name of Peg 1, must be a char
 peg2:	.int	'B'
@@ -32,24 +29,7 @@ n:	.int	4		@ number of disks to move
 	.text
 	.global main
 	.extern printf
-	.extern	scanf
 
-@ ---------------------------------------
-@ getNumberOfDisks():
-@ prompts the user and puts the number
-@ in n.
-getNumberOfDisks:
-	push 	{ip, lr}	@ push return address + dummy register
-				@ for alignment
-
-	ldr	r0, =prompt	@ print the prompt
-	bl	printf
-
-	ldr     r0, =format	@ call scanf, and pass address of format
-	ldr	r1, =n		@ string and address of n in r0, and r1,
-	bl	scanf		@ respectively.
-
-        pop 	{ip, pc}
 	
 @ ---------------------------------------
 @ moveDisks( n, Source, Dest, Extra )
@@ -109,9 +89,6 @@ endMoveDisk:
 main:   push 	{ip, lr}	@ push return address + dummy register
 				@ for alignment
 
-	bl	getNumberOfDisks
-				@ get n
-	
 	ldr	r4, =n		@ pass n
 	ldr	r4, [r4]
 	ldr	r5, =peg1	@ pass peg1
